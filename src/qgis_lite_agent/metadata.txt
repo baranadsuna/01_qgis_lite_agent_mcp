@@ -1,0 +1,20 @@
+[general]
+name=QGIS Lite Agent & MCP Bridge
+qgisMinimumVersion=3.22
+qgisMaximumVersion=4.99
+supportsQt6=True
+description=Ultra-low token AI Agent & Model Context Protocol (MCP) loopback bridge with per-layer privacy control, AST security sandbox, EPSG:5253 governance, and native .model3 export.
+about=QGIS Lite Agent & MCP Bridge is a clean-room engineered, lightweight assistant and MCP server for QGIS 3.x and 4.x (Qt5 and Qt6). It compresses project context to under 150 tokens using SHA-256 delta snapshots, enforces strict per-layer privacy opt-in, validates all AI-proposed PyQGIS actions through a static AST security sandbox with Human-in-the-Loop approval, audits EPSG:5253 (TUREF / TM30) CRS compliance, and exports multi-step workflows directly to native QGIS .model3 files or standalone Python scripts. Supports Antigravity, Claude Code, Cursor, Codex, OpenCode, Gemini, DeepSeek, Grok, and Ollama.
+version=1.0.0
+author=QGIS Lite Agent Contributors (Clean-Room Architecture)
+email=opensource@example.org
+license=GPL-2.0-or-later
+tracker=https://github.com/example/qgis_lite_agent/issues
+repository=https://github.com/example/qgis_lite_agent
+homepage=https://github.com/example/qgis_lite_agent
+tags=ai,mcp,agent,copilot,processing,model3,pyqgis,epsg5253,qt6,security
+category=Plugins
+icon=icon.svg
+experimental=False
+deprecated=False
+hasProcessingProvider=False

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>qgis_lite_agent (v1.0.0) — Compact Context Protocol, AST Sandbox &amp; GUI Guide</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+  <style>
+    :root {
+      --bg: #0b1120;
+      --card: #1e293b;
+      --border: #334155;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --emerald: #10b981;
+      --amber: #f59e0b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.68;
+    }
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #065f46 50%, #0284c7 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 3rem 1.5rem 2.5rem;
+    }
+    .container { max-width: 1140px; margin: 0 auto; }
+    .badge-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+    .badge {
+      font-size: 0.76rem; font-weight: 700; text-transform: uppercase;
+      padding: 0.3rem 0.75rem; border-radius: 999px;
+      background: rgba(15, 23, 42, 0.72); border: 1px solid rgba(148, 163, 184, 0.35);
+      color: #e2e8f0;
+    }
+    .badge.crs { border-color: var(--emerald); color: #6ee7b7; }
+    h1 { margin: 0 0 0.6rem; font-size: 2.2rem; }
+    h2 {
+      margin-top: 2.5rem; padding-bottom: 0.45rem;
+      border-bottom: 1px solid var(--border); color: #f1f5f9;
+    }
+    h3 { color: #7dd3fc; margin-top: 1.35rem; margin-bottom: 0.5rem; }
+    main { padding: 2rem 1.5rem 4rem; }
+    .panel {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.35rem; margin: 1.1rem 0;
+    }
+    .math-block {
+      background: rgba(15, 23, 42, 0.85); border-left: 4px solid var(--emerald);
+      padding: 1rem 1.25rem; border-radius: 6px; overflow-x: auto; margin: 0.85rem 0;
+    }
+    pre {
+      background: #0f172a; border: 1px solid var(--border); border-radius: 8px;
+      padding: 1rem; overflow-x: auto; color: #e2e8f0; font-size: 0.85rem;
+    }
+    .screenshot-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+      gap: 1.35rem; margin-top: 1.25rem;
+    }
+    figure {
+      margin: 0; background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1rem;
+    }
+    figure img { width: 100%; height: auto; border-radius: 6px; border: 1px solid #475569; }
+    figcaption { margin-top: 0.65rem; font-size: 0.88rem; color: var(--muted); }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; background: var(--card); font-size: 0.88rem; }
+    th, td { padding: 0.7rem 0.85rem; border: 1px solid var(--border); text-align: left; vertical-align: top; }
+    th { background: #0f172a; color: #93c5fd; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code {
+      font-family: 'Consolas', monospace; background: rgba(15, 23, 42, 0.85);
+      padding: 0.15rem 0.4rem; border-radius: 4px; color: #7dd3fc; font-size: 0.88em;
+    }
+    footer {
+      border-top: 1px solid var(--border); padding: 2rem 1.5rem;
+      text-align: center; color: var(--muted); font-size: 0.88rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="badge-row">
+      <span class="badge">Plugin: qgis_lite_agent v1.0.0</span>
+      <span class="badge crs">Standard CRS: EPSG:5253 (TUREF / TM30)</span>
+      <span class="badge">QGIS 3.x &amp; 4.x (supportsQt6=True)</span>
+      <span class="badge">&lt; 150 Token Compact Context Protocol</span>
+      <span class="badge">3-Tier AST Security Sandbox</span>
+    </div>
+    <h1>QGIS Lite Agent &amp; Low-Token MCP Bridge</h1>
+    <p style="max-width:880px; color:#cbd5e1; margin:0;">
+      Clean-room engineered AI copilot dock and JSON-RPC 2.0 loopback server (<code>127.0.0.1</code>) featuring SHA-256 delta state synchronization, per-layer privacy opt-in, human-in-the-loop AST security auditing, <code>EPSG:5253</code> governance, and 1-click native <code>.model3</code> export.
+    </p>
+  </div>
+</header>
+
+<main class="container">
+
+  <h2>1. Algorithmic &amp; Protocol Methodology</h2>
+
+  <div class="panel">
+    <h3>1.1 Sub-150 Token Compact Context Protocol &amp; SHA-256 Delta Digest (<code>compact_context.py</code>)</h3>
+    <p>
+      Conventional GIS AI plugins serialize verbose JSON schemas and raw GeoJSON geometry coordinates on every turn, consuming $1,800\text{–}4,500$ tokens per request. <code>CompactContextBuilder</code> compresses each user-approved layer $L \in \mathcal{L}_{\text{opt-in}}$ into a deterministic micro-DSL record and computes a 64-bit truncated SHA-256 state digest $H_t$:
+    </p>
+    <div class="math-block">
+      $$H_t = \text{SHA256}\!\left(\text{crs}_{\text{proj}} \;\Big\|\; \bigoplus_{L \in \mathcal{L}_{\text{opt-in}}} \big(L_{\text{id}},\, L_{\text{type}},\, L_{\text{crs}},\, L_{\text{fc}},\, L_{\text{sel}},\, \lfloor L_{\text{ext}} \rceil_1,\, L_{\text{fields}}\big)\right)_{0..15}$$
+    </div>
+    <p>
+      When $H_t = H_{t-1}$ on subsequent turns ($t \ge 2$), <code>build_delta_context(H_{t-1})</code> transmits only a 18-token delta heartbeat:
+    </p>
+    <pre>{"v": 1, "delta": "UNCHANGED", "hash": "a94f82c1d0e8b712", "p_crs": "EPSG:5253", "crs_ok": true}</pre>
+    <div class="math-block">
+      $$\eta_{\text{token}} = 1 - \frac{T_{\text{delta}}}{T_{\text{verbose}}} = 1 - \frac{18}{1200} = 98.5\% \text{ token reduction on unchanged turns}$$
+    </div>
+
+    <h3>1.2 Three-Tier AST Static Security Sandbox &amp; Ephemeral Loopback Auth (<code>security_guard.py</code>)</h3>
+    <p>
+      Before any AI-generated PyQGIS snippet or tool call is executed, <code>SecurityGuard</code> parses the code into an Abstract Syntax Tree (<code>ast.parse</code>) and traverses every node via <code>AstSecurityVisitor(ast.NodeVisitor)</code>:
+    </p>
+    <ul>
+      <li><strong><code>RiskLevel.BLOCKED</code>:</strong> Immediately rejects imports or calls involving <code>subprocess</code>, <code>shutil</code>, <code>socket</code>, <code>urllib</code>, <code>requests</code>, <code>ctypes</code>, <code>pickle</code>, <code>eval()</code>, <code>exec()</code>, <code>compile()</code>, <code>__import__()</code>, <code>os.system()</code>, or sandbox-escape dunders (<code>__subclasses__</code>, <code>__globals__</code>, <code>__builtins__</code>, <code>__code__</code>).</li>
+      <li><strong><code>RiskLevel.WORKSPACE_MUTATION</code>:</strong> Flags calls to <code>processing.run</code>, <code>startEditing</code>, <code>deleteFeatures</code>, <code>addMapLayer</code>, <code>setCrs</code>, or <code>QgsVectorFileWriter</code>, routing them to the <strong>Human-in-the-Loop Action Review</strong> pane for explicit user approval.</li>
+      <li><strong><code>RiskLevel.READ_ONLY</code>:</strong> Permits bounded metadata, CRS, and expression queries to execute safely on the main Qt thread.</li>
+    </ul>
+    <p>
+      For external MCP clients (Antigravity, Claude Code, Cursor, OpenCode, Codex), the TCP bridge binds strictly to <code>127.0.0.1</code> and authenticates every JSON-RPC 2.0 request against a 128-bit session token (<code>secrets.token_hex(16)</code>) using constant-time <code>hmac.compare_digest</code>.
+    </p>
+
+    <h3>1.3 First-Class <code>EPSG:5253</code> (TUREF / TM30) Governance &amp; Native <code>.model3</code> Compiler (<code>model3_exporter.py</code>)</h3>
+    <p>
+      The dock continuously audits whether <code>QgsProject.instance().crs().authid()</code> and all opted-in layers match the standard projected CRS <code>EPSG:5253</code>, offering 1-click deterministic reprojection via <code>native:reprojectlayer</code>. Approved processing action chains can be compiled with 1 click into native QGIS Graphic Modeler XML files (<code>.model3</code>) or standalone reproducible PyQGIS scripts (<code>.py</code>)—completely avoiding heavy custom visual node-canvas bloat.
+    </p>
+  </div>
+
+  <h2>2. Clean-Room Comparative Synthesis Matrix</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Architectural Dimension</th>
+        <th>Legacy MCP / Copilot Plugins</th>
+        <th><code>qgis_lite_agent</code> (Clean-Room Architecture)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Prompt &amp; Schema Token Cost</strong></td>
+        <td>1,800–4,500 tokens/turn (100+ granular tool schemas + full JSON layer dumps)</td>
+        <td><strong>&lt; 150 tokens initial turn; ~18 tokens on delta turns (6 multiplexed tools + SHA-256 state hash)</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Layer Privacy Governance</strong></td>
+        <td>Entire QGIS project exposed to LLM by default</td>
+        <td><strong>Explicit per-layer opt-in checkboxes; zero raw WKT/GeoJSON geometry dumping</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Execution Security</strong></td>
+        <td>Unguarded <code>exec()</code> on loopback socket</td>
+        <td><strong>3-Tier AST Static Analyzer + 128-bit Loopback Session Token + Human-in-the-Loop Approval</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Workflow Reproducibility</strong></td>
+        <td>Ephemeral chat history or bloated custom node canvas</td>
+        <td><strong>1-Click compilation to native QGIS <code>.model3</code> XML &amp; standalone <code>.py</code> script (zero canvas bloat)</strong></td>
+      </tr>
+      <tr>
+        <td><strong>CRS &amp; Geodetic Standard</strong></td>
+        <td>Unchecked geographic/projected mixing</td>
+        <td><strong>Built-in <code>EPSG:5253</code> (TUREF / TM30) compliance badge &amp; 1-click reprojection</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>3. Step-by-Step GUI Workflow (Real PyQGIS Captures)</h2>
+  <div class="screenshot-grid">
+    <figure>
+      <img src="assets/gui_step1_dock_overview.png" alt="qgis_lite_agent Step 1 Minimalist English Dock Overview" />
+      <figcaption>
+        <strong>Stage 1 — Minimalist English Dock, Layer Privacy Selector &amp; CRS Audit:</strong> Configuring the AI provider / local MCP loopback bridge (<code>127.0.0.1</code>), selecting opt-in layers, and verifying the <code>EPSG:5253</code> CRS status badge and live token counter.
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="assets/gui_step2_code_review.png" alt="qgis_lite_agent Step 2 AST Security Review &amp; .model3 Export" />
+      <figcaption>
+        <strong>Stage 2 — Human-in-the-Loop AST Action Review &amp; 1-Click <code>.model3</code> Export:</strong> Reviewing an AI-proposed <code>processing.run</code> chain classified as <code>WORKSPACE_MUTATION</code> by <code>SecurityGuard</code>, approving execution, and exporting the workflow to a native QGIS <code>.model3</code> file.
+      </figcaption>
+    </figure>
+  </div>
+
+  <h2>4. Verified Academic &amp; Algorithmic Foundations</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Citation</th>
+        <th>Title &amp; Journal</th>
+        <th>Verified DOI</th>
+        <th>Relevance to Spatial Processing Workflows</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Dijkstra, E. W.</strong> (1959)</td>
+        <td><em>A note on two problems in connexion with graphs</em>, Numerische Mathematik, 1(1), 269–271.</td>
+        <td><a href="https://doi.org/10.1007/BF01386390" target="_blank" rel="noopener">10.1007/BF01386390</a></td>
+        <td>Foundation of <code>native:shortestpathpointtopoint</code> and network accessibility chains exported to <code>.model3</code></td>
+      </tr>
+      <tr>
+        <td><strong>Luo, W. &amp; Wang, F.</strong> (2003)</td>
+        <td><em>Measures of Spatial Accessibility to Health Care in a GIS Environment: Synthesis and a Case Study in the Chicago Region</em>, Environment and Planning B, 30(6), 865–884.</td>
+        <td><a href="https://doi.org/10.1068/b29120" target="_blank" rel="noopener">10.1068/b29120</a></td>
+        <td>Spatial buffer &amp; catchment join workflows automated via <code>qgis_lite_agent</code> processing chains</td>
+      </tr>
+    </tbody>
+  </table>
+
+</main>
+
+<footer>
+  <div class="container">
+    Author: <strong>Baran Adsuna</strong> (<a href="https://github.com/baranadsuna">github.com/baranadsuna</a>) • <a href="../../../06_github_io_dokumantasyon_merkezi/index.html">Back to Master Documentation Center</a>
+  </div>
+</footer>
+
+</body>
+</html>
